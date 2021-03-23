@@ -1,3 +1,11 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +13,252 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #010204;
+  min-height: 200vh;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.6s;
+  padding: 40px 100px;
+  text-shadow: 0 0 10px #50adf8;
+  z-index: 100000;
+}
+.stiky{
+  background: rgba(255, 255, 255, .5);
+  box-shadow: 0 0 10px white;
+}
+.stiky .logo{
+  color: #000;
+  text-shadow: none;
+}
+.stiky ul li a{
+  color: #000;
+  text-shadow: none;
+}
+header ul li a:hover{
+ opacity: .5;
+}
+
+
+header .logo{
+  position: relative;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.6s;
+}
+header ul{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header ul li{
+  position: relative;
+  list-style: none;
+}
+header ul li a{
+  position: relative;
+  margin: 0 15px;
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 2px;
+  font-weight: 500px;
+  transition: 0.6s;
+}
+.banner{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url("bg-7.jpg");
+  background-size: cover;
+}
+.box{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  padding: 40px;
+  background: transparent;
+  box-sizing: border-box;
+
+  
+}
+
+.box .log{
+  padding: 22px;
+  color: #FFF;
+  left: 50%;
+  text-align: center;
+  display: table-cell;
+  animation: animate 2s linear infinite;
+
+}
+@keyframes animate{
+  
+  0%, 100%{
+      color: #FFF;
+      filter: blur(2px);
+      text-shadow: 0 0 10px #00b3ff,
+                   0 0 20px #00b3ff,
+                   0 0 40px #00b3ff,
+                   0 0 80px #00b3ff,
+                   0 0 120px #00b3ff,
+                   0 0 200px #00b3ff, 
+                   0 0 300px #00b3ff,
+                   0 0 400px #00b3ff;
+  }
+  5%, 95%{
+      color: #111;
+      filter: blur(0px);
+      text-shadow: none;
+  }
+
+}
+.log:nth-child(1){
+  animation-delay: 0s;
+}
+.log:nth-child(2){
+  animation-delay: 0.25s;
+}
+.log:nth-child(3){
+  animation-delay: 0.50s;
+}
+.log:nth-child(4){
+  animation-delay: 0.75s;
+}
+.log:nth-child(5){
+  animation-delay: 1s;
+}
+.box .inputbox{
+  position: relative;
+}
+.box .inputbox input{
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #FFF;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #FFF;
+
+}
+.box .inputbox label{
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #FFF;
+  pointer-events: none;
+  transition: .5s;
+}
+.box .inputbox input:focus ~ label,
+.box .inputbox input:valid ~ label{
+  top: -18px;
+  left: 0;
+  color: #03a9f4;
+  font-size: 12px;
+}
+.box input[type="submit"]{
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #FFF;
+  background: #03a9f4;
+  padding: 10px 142px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: monospace;
+}
+.animates{
+  margin-top: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img{
+  position: absolute;
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+.box1{
+  position: relative;
+  width: 200px;
+  height: 250px;
+  transform-style: preserve-3d;
+  animation: animate2 20s linear infinite;
+}
+@keyframes  animate2 {
+  0%{
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100%{
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.box1 span{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 45deg)) translateZ(400px);
+  -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0004);
+}
+h1{
+  top: 10%;
+  color: azure;
+  text-align: center;
+  font-family: cursive;
+  text-shadow: 0 0 10px aqua;
+}
+section{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+section .text{
+  position: absolute;
+  color: #fff;
+  max-width: 800px;
+  user-select: none;
+  font-size: 2em;
+}
+.banner-area h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: cursive;
+  font-size: 4.5em;
 }
